@@ -1,2 +1,2 @@
 # W205
-MIDS W205-6 projects and homework repo
+The purpose of this repo is to hold code for MIDS W205-6 projects.
