@@ -29,25 +29,29 @@ cp "raw_hospital_data/Measure Dates.csv" hospital_data/measure_dates.csv
 cp "raw_hospital_data/hvbp_hcahps_08_06_2015.csv" hospital_data/survey_responses.csv
 cd hospital_data/
 mkdir processed_hospital_data
-tail -n +2 hospital_data/hospitals.csv > processed_hospital_data/hospitals.csv
-tail -n +2 hospital_data/effective_care.csv > processed_hospital_data/effective_care.csv
-tail -n +2 hospital_data/readmissions.csv > processed_hospital_data/readmissions.csv
-tail -n +2 hospital_data/measure_dates.csv > processed_hospital_data/measure_dates.csv
-tail -n +2 hospital_data/survey_responses.csv > processed_hospital_data/survey_responses.csv
+tail -n +2 hospitals.csv > processed_hospital_data/hospitals.csv
+tail -n +2 effective_care.csv > processed_hospital_data/effective_care.csv
+tail -n +2 readmissions.csv > processed_hospital_data/readmissions.csv
+tail -n +2 measure_dates.csv > processed_hospital_data/measure_dates.csv
+tail -n +2 survey_responses.csv > processed_hospital_data/survey_responses.csv
 sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare
+sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/measures_dates
+sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/survey_responses
+sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/readmissions
+sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/effective_care
+sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/hospitals
 sudo -u w205 hdfs dfs -ls /user/w205/
-sudo -u w205 hdfs dfs -put processed_hospital_data/survey_responses.csv /user/w205/hospital_care
-sudo -u w205 hdfs dfs -put processed_hospital_data/measure_dates.csv /user/w205/hospital_care
+sudo -u w205 hdfs dfs -put processed_hospital_data/survey_responses.csv /user/w205/hospital_compare/survey_responses
+sudo -u w205 hdfs dfs -put processed_hospital_data/measure_dates.csv /user/w205/hospital_compare/measure_dates
 sudo -u w205 hdfs dfs -ls /user/w205/hospital_compare
 sudo -u w205 hdfs dfs -ls /user/w205/
 sudo -u w205 hdfs dfs -du /user/w205/
-sudo -u w205 hdfs dfs -rm r /user/w205/hospital_care
 sudo -u w205 hdfs dfs -du /user/w205/
-sudo -u w205 hdfs dfs -put processed_hospital_data/measure_dates.csv /user/w205/hospital_compare/
-sudo -u w205 hdfs dfs -put processed_hospital_data/survey_responses.csv /user/w205/hospital_compare/
-sudo -u w205 hdfs dfs -put processed_hospital_data/readmissions.csv /user/w205/hospital_compare/
-sudo -u w205 hdfs dfs -put processed_hospital_data/effective_care.csv /user/w205/hospital_compare/
-sudo -u w205 hdfs dfs -put processed_hospital_data/hospitals.csv /user/w205/hospital_compare/
+sudo -u w205 hdfs dfs -put processed_hospital_data/measure_dates.csv /user/w205/hospital_compare/measure_dates
+sudo -u w205 hdfs dfs -put processed_hospital_data/survey_responses.csv /user/w205/hospital_compare/survey_responses
+sudo -u w205 hdfs dfs -put processed_hospital_data/readmissions.csv /user/w205/hospital_compare/readmissions
+sudo -u w205 hdfs dfs -put processed_hospital_data/effective_care.csv /user/w205/hospital_compare/effective_care
+sudo -u w205 hdfs dfs -put processed_hospital_data/hospitals.csv /user/w205/hospital_compare/hospitals
 sudo -u w205 hdfs dfs -du /user/w205/
 sudo -u w205 hdfs dfs -du /user/w205/hospital_compare
 sudo -u w205 hdfs dfs -du /user/w205/hospital_compare
