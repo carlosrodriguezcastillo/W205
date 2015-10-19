@@ -9,7 +9,7 @@ select
 	measureid as measureid, 
 	measurename as measurename, 
 	CAST(score AS DOUBLE) as score,
-	max(CAST(score as DOUBLE)) OVER () as normalizing_score
+	max(CAST(score as DOUBLE)) OVER (PARTITION BY measureid) as normalizing_score
 from 
 	effective_care 
 where 
@@ -23,7 +23,7 @@ select
 	measureid as measureid, 
 	measurename as measurename, 
 	CAST(score AS DOUBLE) as score,
-	max(CAST(score as DOUBLE)) OVER () as normalizing_score 
+	max(CAST(score as DOUBLE)) OVER (PARTITION BY measureid) as normalizing_score 
 from 
 	readmissions 
 where 

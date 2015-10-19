@@ -8,4 +8,7 @@ SELECT
 	providernumber as hospitalid,
 	(CAST(HCAHPSBaseScore as DOUBLE) + CAST(HCAHPSConsistencyScore as DOUBLE)) as PatientSurveyScore
 FROM
-	survey_responses;
+	survey_responses
+WHERE
+	HCAHPSBaseScore RLIKE '^[0-9]+(\.[0-9]*)$' AND
+	HCAHPSConsistencyScore RLIKE '^[0-9]+(\.[0-9]*)$';
