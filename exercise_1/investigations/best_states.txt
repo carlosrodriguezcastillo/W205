@@ -1,0 +1,19 @@
+Answering the question “What states are models of high quality care?” I found that the top ten states in terms of quality of care are the following:
+
+state	avg_score
+UT	0.7654032736737181
+CA	0.7575751896885158
+HI	0.7569618836433875
+RI	0.7563789423164418
+CO	0.7553046264883506
+DE	0.7530335265632666
+VA	0.7530021985207078
+MA	0.7529674421017541
+NJ	0.7499972852497522
+SC	0.7499544738428826
+
+As such, my conclusion is that the top states as models of high quality of care are Utah, California and Hawaii, although it is worth noting that the top ten are quite close to each other in score (difference of about .015 points on a 0 - 1 scale). Having California as the second highest ranked is interesting as 7/10 of the top hospitals that I found in the best_hospitals investigations were in California.
+
+Similar to the analysis for best_hospitals, I excluded from calculations of the average score those scores that were ‘not available’ as well as those scores that did not translate to an integer value. I also excluded from the ranking those states that did not have a significant sample of scored procedures (30 or more). Unlike in the case of hospitals, most states had a significant sample of scored procedures (Only the territories of Guam and Northern Mariana Islands were excluded from the ranking).
+
+Please note that the normalization of scores is identical to that in the best_hospitals analysis as the same normalized data is underlying the analysis (particularly note that the same refinement described in best_hospitals.txt would apply).

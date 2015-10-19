@@ -1,0 +1,23 @@
+Answering the question "What hospitals are models of high-quality care—that is, which hospitals have the most consistently high scores for a variety of procedures?" I found that the top ten hospitals in terms of quality of care are the following:
+
+hospitalid	hospitalname					avg_score
+050772		KAISER FOUNDATION HOSPITAL - ROSEVILLE		0.9526983443154547
+050512		KAISER FOUNDATION HOSPITAL - FREMONT		0.9436669074190566
+380091		KAISER SUNNYSIDE MEDICAL CENTER			0.9358950086593196
+050541		KAISER FOUNDATION HOSPITAL - REDWOOD CITY	0.9046155399677925
+050425		KAISER FOUNDATION HOSPITAL - SACRAMENTO		0.9032455124045722
+050760		KAISER FOUNDATION HOSPITAL - ANTIOCH		0.9019405825445193
+050071		KAISER FOUNDATION HOSPITAL-SANTA CLARA		0.8929330168038512
+030022		MARICOPA MEDICAL CENTER				0.8925469063281531
+060125		CASTLE ROCK ADVENTIST HOSPITAL			0.8895637952789633
+050604		KAISER FOUNDATION HOSPITAL-SAN JOSE		0.8876589498157655
+
+From the above, my conclusion is that Kaiser Foundation Hospitals are models of high-quality care as captured by qualifying score in the most recent readmissions and timely and quality care data published by data.medicare.gov.
+
+Please note that I excluded from calculations of the average score those scores that were ‘not available’ as well as those scores that did not translate to an integer value.
+
+Additionally, I excluded from the ranking those hospitals that did not have a significant sample of scored procedures (30 or more). It is important to note that this has a significant impact on the number of hospitals being considered in the ranking.
+
+In order to normalize the scores, I used the descriptions in the data dictionary for the raw data (). I decided to normalize the score of each of the procedures by the max of each procedure across all the eligible hospitals. Then I proceeded to further normalize those scores for which a higher score is worse by subtracting them from one (the affected procedures are those in the readmissions data as well as those with codes 'ED_1b', 'ED_2b', 'EDV', 'OP_1', 'OP_3b', 'OP_5', 'OP_18', 'OP_20', 'OP_21', 'OP_22', 'PC_01' in the timely and effective care data).
+
+Finally, it is also important to note that further refinement can be done by by more sophisticated normalization such as by taking into account mean and variance of the data (through some transformation of z scores for both the data with regular and inverse meaning).

@@ -8,7 +8,6 @@ wget -O raw_hospital_data.zip "https://data.medicare.gov/views/bg9k-emty/files/M
 unzip raw_hospital_data.zip
 sudo -u hdfs hadoop fs -ls -R /
 cd ~
-ls
 ./start-hadoop.sh
 for i in `cd /etc/init.d && ls hadoop-hdfs*`; do service $i restart; done
 /usr/lib/hadoop/libexec/init-hdfs.sh
@@ -40,11 +39,6 @@ sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/survey_responses
 sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/readmissions
 sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/effective_care
 sudo -u w205 hdfs dfs -mkdir /user/w205/hospital_compare/hospitals
-sudo -u w205 hdfs dfs -ls /user/w205/
-sudo -u w205 hdfs dfs -put processed_hospital_data/survey_responses.csv /user/w205/hospital_compare/survey_responses
-sudo -u w205 hdfs dfs -put processed_hospital_data/measure_dates.csv /user/w205/hospital_compare/measure_dates
-sudo -u w205 hdfs dfs -ls /user/w205/hospital_compare
-sudo -u w205 hdfs dfs -ls /user/w205/
 sudo -u w205 hdfs dfs -du /user/w205/
 sudo -u w205 hdfs dfs -du /user/w205/
 sudo -u w205 hdfs dfs -put processed_hospital_data/measure_dates.csv /user/w205/hospital_compare/measure_dates

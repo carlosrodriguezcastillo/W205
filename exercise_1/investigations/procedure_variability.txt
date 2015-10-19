@@ -1,0 +1,19 @@
+Answering the question “Which procedures have the greatest variability between hospitals?” I found that the top ten procedures in terms of score variability are the following:
+
+measureid		measurename																stddev_score
+OP_23			Head CT results																0.20700553132826133
+OP_2			Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival										0.1845734228688155
+STK_4			Thrombolytic Therapy															0.16578280846973972
+HF_1			Discharge instructions															0.16140559017907308
+IMM_3_OP_27_FAC_ADHPCT	Healthcare workers given influenza vaccination												0.1505625306775663
+CAC_3			Home Management Plan of Care Document													0.14494265770792772
+PC_01			Percent of newborns whose deliveries were scheduled early (1-3 weeks early), when a scheduled delivery was not medically necessary	0.13998878657698174
+VTE_5			Warfarin therapy discharge instructions													0.1375788542625326
+VTE_1			Venous thromboembolism prophylaxis													0.12531727017667355
+OP_1			Median Time to Fibrinolysis														0.12390823030302539
+
+My conclusion is that the above procedures have the most variability among qualifying procedures (I have minimal insight into what can be inferred from the top procedures by variability).
+
+Similar to the analysis for best_hospitals, I excluded from calculations of the average score those scores that were ‘not available’ as well as those scores that did not translate to an integer value. I also excluded from the ranking those procedures that did not have a significant sample of scored hospitals (30 or more). Most procedures had a significant sample of scored hospitals (Only 2 of the 63 total procedures were excluded from the ranking).
+
+Please note that the normalization of scores is identical to that in the best_hospitals analysis as the same normalized data is underlying the analysis (particularly note that the same refinement described in best_hospitals.txt would apply).

@@ -1,3 +1,7 @@
+-- ************************************************************
+-- This is where the survey_results table is created
+-- ************************************************************
+
 DROP TABLE IF EXISTS survey_results;
 
 

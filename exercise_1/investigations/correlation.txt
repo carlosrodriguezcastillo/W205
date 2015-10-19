@@ -1,0 +1,5 @@
+Answering the question “Are average scores for hospital quality or procedural variability correlated with patient survey responses?” I found that the pearson’s correlation between average quality of care and patient survey scores is 0.21.
+
+As such, my conclusion is that there is a small positive correlation between average quality of care score and patient survey score. Intuitively the positive correlation makes sense as higher quality of care would mean higher patient satisfaction (which should be reflected in patient survey scores).
+
+My approach was to collect the average quality of care scores and the patient survey scores for each of the hospitals that had both a survey score and an average quality of care score. That way I guaranteed that both variables had the same cardinality, which is a requirement of running a pearson’s correlation between variables. I then loaded each of the variables as an independent RDD in pyspark to run the correlation analysis.

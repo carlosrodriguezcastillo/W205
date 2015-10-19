@@ -1,3 +1,7 @@
+-- ************************************************************
+-- File where the hospital table is created
+-- ************************************************************
+
 DROP TABLE IF EXISTS hospitals;
 
 CREATE TABLE hospitals
